@@ -1,7 +1,7 @@
 const config = require('./src/config');
 
 module.exports = {
-  pathPrefix: "/Shubham-portfolio/src/",
+  pathPrefix: "/Shubham-portfolio/src/components/",
   siteMetadata: {
     title: 'Brittany Chiang',
     description:
