@@ -9,15 +9,11 @@
 </p>
 <p align="center">
   Previous iterations:
-  <a href="https://suubh.github.io/Shubham" target="_blank">v1</a>,
+  <a href="https://suubh.github.io/Shubham" target="_blank">Version 1</a>,
 </p>
 
 
 ![demo](https://user-images.githubusercontent.com/47265493/122730181-919fdd80-d297-11eb-8e13-ada3a45355ed.png)
-
-
-
-### TL;DR
 
 Yes, you can fork this repo. Please give  proper credit by linking back to [brittanychiang.com](https://brittanychiang.com). Thanks!
 
