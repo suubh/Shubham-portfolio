@@ -9,7 +9,7 @@
 </p>
 <p align="center">
   Previous iterations:
-  <a href="https://suubh.github.io/Shubham" target="_blank">Version 1</a>,
+  <a href="https://suubh.github.io/Shubham" target="_blank">Version 1</a>
 </p>
 
 
