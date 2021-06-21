@@ -11,18 +11,6 @@ function createProxyHandler(prefix, options) {
         return value
       }
 
-      const fieldDescriptor = Object.getOwnPropertyDescriptor(target, key)
-      if (fieldDescriptor && !fieldDescriptor.writable) {
-        // this is to prevent errors like:
-        // ```
-        // TypeError: 'get' on proxy: property 'constants' is a read - only and
-        // non - configurable data property on the proxy target but the proxy
-        // did not return its actual value
-        // (expected '[object Object]' but got '[object Object]')
-        // ```
-        return value
-      }
-
       if (typeof value === `function`) {
         return function wrapper(...args) {
           const myErrorHolder = {

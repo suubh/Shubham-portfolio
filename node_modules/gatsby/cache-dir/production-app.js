@@ -175,40 +175,24 @@ apiRunnerAsync(`onClientEntry`).then(() => {
       }
     ).pop()
 
-    const App = function App() {
-      const onClientEntryRanRef = React.useRef(false)
-
-      React.useEffect(() => {
-        if (!onClientEntryRanRef.current) {
-          onClientEntryRanRef.current = true
-          performance.mark(`onInitialClientRender`)
-
-          apiRunner(`onInitialClientRender`)
-        }
-      }, [])
-
-      return <GatsbyRoot>{SiteRoot}</GatsbyRoot>
-    }
+    const App = () => <GatsbyRoot>{SiteRoot}</GatsbyRoot>
 
     const renderer = apiRunner(
       `replaceHydrateFunction`,
       undefined,
-      ReactDOM.createRoot ? ReactDOM.createRoot : ReactDOM.hydrate
+      ReactDOM.hydrate
     )[0]
 
     domReady(() => {
-      const container =
+      renderer(
+        <App />,
         typeof window !== `undefined`
           ? document.getElementById(`___gatsby`)
-          : null
-
-      if (renderer === ReactDOM.createRoot) {
-        renderer(container, {
-          hydrate: true,
-        }).render(<App />)
-      } else {
-        renderer(<App />, container)
-      }
+          : void 0,
+        () => {
+          apiRunner(`onInitialClientRender`)
+        }
+      )
     })
   })
 })

@@ -5,6 +5,8 @@ var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefau
 exports.__esModule = true;
 exports.notCalledFunction = notCalledFunction;
 
+var _interopRequireWildcard2 = _interopRequireDefault(require("@babel/runtime/helpers/interopRequireWildcard"));
+
 var _react = _interopRequireDefault(require("react"));
 
 var _reactDom = _interopRequireDefault(require("react-dom"));
@@ -37,10 +39,10 @@ var _navigation = require("./navigation");
 
 require("./blank.css");
 
-function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function (nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
-
-function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
-
+// Generated during bootstrap
+// ensure in develop we have at least some .css (even if it's empty).
+// this is so there is no warning about not matching content-type when site doesn't include any regular css (for example when css-in-js is used)
+// this also make sure that if all css is removed in develop we are not left with stale commons.css that have stale content
 // Enable fast-refresh for virtual sync-requires, gatsby-browser & navigation
 // To ensure that our <Root /> component can hot reload in case anything below doesn't
 // satisfy fast-refresh constraints
@@ -58,7 +60,7 @@ window.___loader = _loader.publicLoader; // Do dummy dynamic import so the jsonp
 // error.
 
 function notCalledFunction() {
-  return Promise.resolve().then(() => _interopRequireWildcard(require(`./dummy`)));
+  return Promise.resolve().then(() => (0, _interopRequireWildcard2.default)(require(`./dummy`)));
 } // Let the site/plugins run code very early.
 
 
@@ -113,20 +115,10 @@ function notCalledFunction() {
   }
 
   const rootElement = document.getElementById(`___gatsby`);
-  const focusEl = document.getElementById(`gatsby-focus-wrapper`); // Client only pages have any empty body so we just do a normal
+  const focusEl = document.getElementById(`gatsby-focus-wrapper`);
+  const renderer = (0, _apiRunnerBrowser.apiRunner)(`replaceHydrateFunction`, undefined, // Client only pages have any empty body so we just do a normal
   // render to avoid React complaining about hydration mis-matches.
-
-  let defaultRenderer = _reactDom.default.render;
-
-  if (focusEl && focusEl.children.length) {
-    if (_reactDom.default.createRoot) {
-      defaultRenderer = _reactDom.default.createRoot;
-    } else {
-      defaultRenderer = _reactDom.default.hydrate;
-    }
-  }
-
-  const renderer = (0, _apiRunnerBrowser.apiRunner)(`replaceHydrateFunction`, undefined, defaultRenderer)[0];
+  focusEl && focusEl.children.length > 0 ? _reactDom.default.hydrate : _reactDom.default.render)[0];
   let dismissLoadingIndicator;
 
   if (process.env.GATSBY_EXPERIMENTAL_QUERY_ON_DEMAND && process.env.GATSBY_QUERY_ON_DEMAND_LOADING_INDICATOR === `true`) {
@@ -151,48 +143,22 @@ function notCalledFunction() {
 
   Promise.all([loader.loadPage(`/dev-404-page/`), loader.loadPage(`/404.html`), loader.loadPage(window.location.pathname)]).then(() => {
     (0, _navigation.init)();
-
-    function onHydrated() {
-      (0, _apiRunnerBrowser.apiRunner)(`onInitialClientRender`); // Render query on demand overlay
-
-      if (process.env.GATSBY_QUERY_ON_DEMAND_LOADING_INDICATOR && process.env.GATSBY_QUERY_ON_DEMAND_LOADING_INDICATOR === `true`) {
-        const indicatorMountElement = document.createElement(`div`);
-        indicatorMountElement.setAttribute(`id`, `query-on-demand-indicator-element`);
-        document.body.append(indicatorMountElement);
-
-        if (renderer === _reactDom.default.createRoot) {
-          renderer(indicatorMountElement).render( /*#__PURE__*/_react.default.createElement(_loadingIndicator.LoadingIndicatorEventHandler, null));
-        } else {
-          _reactDom.default.render( /*#__PURE__*/_react.default.createElement(_loadingIndicator.LoadingIndicatorEventHandler, null), indicatorMountElement);
-        }
-      }
-    }
-
-    function App() {
-      const onClientEntryRanRef = _react.default.useRef(false);
-
-      _react.default.useEffect(() => {
-        if (!onClientEntryRanRef.current) {
-          onClientEntryRanRef.current = true;
-          onHydrated();
-        }
-      }, []);
-
-      return /*#__PURE__*/_react.default.createElement(_root.default, null);
-    }
-
     (0, _domready.default)(() => {
       if (dismissLoadingIndicator) {
         dismissLoadingIndicator();
       }
 
-      if (renderer === _reactDom.default.createRoot) {
-        renderer(rootElement, {
-          hydrate: true
-        }).render( /*#__PURE__*/_react.default.createElement(App, null));
-      } else {
-        renderer( /*#__PURE__*/_react.default.createElement(App, null), rootElement);
-      }
+      renderer( /*#__PURE__*/_react.default.createElement(_root.default, null), rootElement, () => {
+        (0, _apiRunnerBrowser.apiRunner)(`onInitialClientRender`); // Render query on demand overlay
+
+        if (process.env.GATSBY_QUERY_ON_DEMAND_LOADING_INDICATOR && process.env.GATSBY_QUERY_ON_DEMAND_LOADING_INDICATOR === `true`) {
+          const indicatorMountElement = document.createElement(`div`);
+          indicatorMountElement.setAttribute(`id`, `query-on-demand-indicator-element`);
+          document.body.append(indicatorMountElement);
+
+          _reactDom.default.render( /*#__PURE__*/_react.default.createElement(_loadingIndicator.LoadingIndicatorEventHandler, null), indicatorMountElement);
+        }
+      });
     });
   });
 });

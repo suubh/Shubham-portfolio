@@ -61,7 +61,7 @@ try {
 
 Html = Html && Html.__esModule ? Html.default : Html;
 
-var _default = (pagePath, isClientOnlyPage, publicDir, error, callback) => {
+var _default = (pagePath, isClientOnlyPage, publicDir, callback) => {
   let bodyHtml = ``;
   let headComponents = [/*#__PURE__*/_react.default.createElement("meta", {
     key: "environment",
@@ -73,17 +73,6 @@ var _default = (pagePath, isClientOnlyPage, publicDir, error, callback) => {
   let preBodyComponents = [];
   let postBodyComponents = [];
   let bodyProps = {};
-
-  if (error) {
-    postBodyComponents.push([/*#__PURE__*/_react.default.createElement("script", {
-      key: "dev-ssr-error",
-      dangerouslySetInnerHTML: {
-        __html: `window._gatsbyEvents = window._gatsbyEvents || []; window._gatsbyEvents.push(["FAST_REFRESH", { action: "SHOW_DEV_SSR_ERROR", payload: ${JSON.stringify(error)} }])`
-      }
-    }), /*#__PURE__*/_react.default.createElement("noscript", {
-      key: "dev-ssr-error-noscript"
-    }, /*#__PURE__*/_react.default.createElement("h1", null, "Failed to Server Render (SSR)"), /*#__PURE__*/_react.default.createElement("h2", null, "Error message:"), /*#__PURE__*/_react.default.createElement("p", null, error.sourceMessage), /*#__PURE__*/_react.default.createElement("h2", null, "File:"), /*#__PURE__*/_react.default.createElement("p", null, error.source, ":", error.line, ":", error.column), /*#__PURE__*/_react.default.createElement("h2", null, "Stack:"), /*#__PURE__*/_react.default.createElement("pre", null, /*#__PURE__*/_react.default.createElement("code", null, error.stack)))]);
-  }
 
   const generateBodyHTML = () => {
     const setHeadComponents = components => {
