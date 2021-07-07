@@ -38,6 +38,10 @@ module.exports = {
       url: '/#projects',
     },
     {
+      name: 'Photos',
+      url: 'http://shubhamdev.me/Photography-Page/',
+    },
+    {
       name: 'Contact',
       url: '/#contact',
     },
