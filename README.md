@@ -1,5 +1,5 @@
 <div align="center">
-  <img alt="Logo" src="https://user-images.githubusercontent.com/47265493/122729809-2f46dd00-d297-11eb-8166-3628a6807699.png" width="100" />
+  <img alt="Logo" src="https:images.githubusercontent.com/47265493/122729809-2f46dd00-d297-11eb-8166-3628a6807699.png" width="100" />
 </div>
 <h1 align="center">
   Shubham Singh
@@ -11,13 +11,16 @@
   Previous iterations:
   <a href="https://suubh.github.io/Shubham" target="_blank">Version 1</a>
 </p>
+
+
+
 <p align="center">
 
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/411568ee-cee9-4f22-b1f1-b6f119931d6c/deploy-status)](http://shubhamdev.netlify.app)
-
-
 </p>
+
+
 
 
 
