@@ -11,6 +11,14 @@
   Previous iterations:
   <a href="https://suubh.github.io/Shubham" target="_blank">Version 1</a>
 </p>
+<p align="center">
+
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/411568ee-cee9-4f22-b1f1-b6f119931d6c/deploy-status)](http://shubhamdev.netlify.app)
+
+
+</p>
+
 
 
 ![demo](https://user-images.githubusercontent.com/47265493/122730181-919fdd80-d297-11eb-8e13-ada3a45355ed.png)
