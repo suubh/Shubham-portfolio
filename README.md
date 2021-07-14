@@ -1,5 +1,6 @@
+<!-- ![Shubham Singh 7-14-2021 4-27-26 AM](https://user-images.githubusercontent.com/47265493/125561307-b51106b1-4d45-4506-9c9e-9e5b2446784e.png) -->
 <div align="center">
-  <img alt="Logo" src="https:images.githubusercontent.com/47265493/122729809-2f46dd00-d297-11eb-8166-3628a6807699.png" width="100" />
+  <img alt="Logo" src="https://user-images.githubusercontent.com/47265493/125561307-b51106b1-4d45-4506-9c9e-9e5b2446784e.png" width="100" />
 </div>
 <h1 align="center">
   Shubham Singh
