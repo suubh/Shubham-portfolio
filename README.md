@@ -14,9 +14,9 @@
 
 
 
-<p align="center">
-    [![Netlify Status](https://api.netlify.com/api/v1/badges/411568ee-cee9-4f22-b1f1-b6f119931d6c/deploy-status)](http://shubhamdev.netlify.app)
-</p>
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/411568ee-cee9-4f22-b1f1-b6f119931d6c/deploy-status)](http://shubhamdev.netlify.app)
+
 
 
 
