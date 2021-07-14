@@ -1,4 +1,6 @@
 <!-- ![Shubham Singh 7-14-2021 4-27-26 AM](https://user-images.githubusercontent.com/47265493/125561307-b51106b1-4d45-4506-9c9e-9e5b2446784e.png) -->
+[![Netlify Status](https://api.netlify.com/api/v1/badges/411568ee-cee9-4f22-b1f1-b6f119931d6c/deploy-status)](http://shubhamdev.netlify.app)
+
 <div align="center">
   <img alt="Logo" src="https://user-images.githubusercontent.com/47265493/125561307-b51106b1-4d45-4506-9c9e-9e5b2446784e.png" width="100" />
 </div>
@@ -6,9 +8,7 @@
   Shubham Singh
 </h1>
 <p align="center">
-  Built with <a href="https://www.gatsbyjs.org/" target="_blank">Gatsby</a> and hosted with <a href="https://www.netlify.com/" target="_blank">Netlify</a>
-  
-  [![Netlify Status](https://api.netlify.com/api/v1/badges/411568ee-cee9-4f22-b1f1-b6f119931d6c/deploy-status)](http://shubhamdev.netlify.app)
+  Built with <a href="https://www.gatsbyjs.org/" target="_blank">Gatsby</a> and hosted with <a href="https://www.netlify.com/" target="_blank">Netlify</a>  
 </p>
 <p align="center">
   Previous iterations:
@@ -18,7 +18,6 @@
 
 
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/411568ee-cee9-4f22-b1f1-b6f119931d6c/deploy-status)](http://shubhamdev.netlify.app)
 
 
 
