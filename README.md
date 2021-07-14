@@ -7,6 +7,7 @@
 </h1>
 <p align="center">
   Built with <a href="https://www.gatsbyjs.org/" target="_blank">Gatsby</a> and hosted with <a href="https://www.netlify.com/" target="_blank">Netlify</a>
+  
   [![Netlify Status](https://api.netlify.com/api/v1/badges/411568ee-cee9-4f22-b1f1-b6f119931d6c/deploy-status)](http://shubhamdev.netlify.app)
 </p>
 <p align="center">
