@@ -39,7 +39,7 @@ module.exports = {
     },
     {
       name: 'Photos',
-      url: 'http://shubhamdev.me/Photography-Page/',
+      url: 'http://shubhamdev.me/photography/',
     },
     {
       name: 'Contact',
