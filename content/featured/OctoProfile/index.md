@@ -3,7 +3,7 @@ date: '3'
 title: 'ML Algo'
 cover: './ML.png'
 github: 'https://github.com/suubh/Machine-Learning-in-Python'
-external: 'https://github.com/suubh/Machine-Learning-in-Python'
+external: 'http://shubhamdev.me/Machine-Learning-in-Python/'
 tech:
   - Machine Learning
   - Python
