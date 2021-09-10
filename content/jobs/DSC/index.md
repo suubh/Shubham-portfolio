@@ -3,7 +3,7 @@ date: '2021-07-16'
 title: 'Google DSC Lead'
 company: 'Google DSC'
 location: 'India'
-range: 'July 2021'
+range: 'July 2021 - Ongoing'
 url: 'https://developers.google.com/community/dsc'
 ---
 
