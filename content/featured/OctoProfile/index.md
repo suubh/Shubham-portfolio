@@ -1,5 +1,5 @@
 ---
-date: '3'
+date: '4'
 title: 'ML Algo'
 cover: './ML.png'
 github: 'https://github.com/suubh/Machine-Learning-in-Python'
