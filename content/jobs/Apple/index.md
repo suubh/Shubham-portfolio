@@ -9,4 +9,5 @@ url: ''
 
 - Member of Google Developer group Hyderabad and Cloud community group Kolkata.
 - Contributed to Cloud community ,attended various workshops on cloud and got certified by TechGig and Google Cloud Platform.
+- Google Cloud Facilitator 2021.
 - Followed by Google Cloud on Twitter.

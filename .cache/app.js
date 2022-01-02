@@ -127,22 +127,12 @@ apiRunnerAsync(`onClientEntry`).then(() => {
   const rootElement = document.getElementById(`___gatsby`)
 
   const focusEl = document.getElementById(`gatsby-focus-wrapper`)
-
-  // Client only pages have any empty body so we just do a normal
-  // render to avoid React complaining about hydration mis-matches.
-  let defaultRenderer = ReactDOM.render
-  if (focusEl && focusEl.children.length) {
-    if (ReactDOM.createRoot) {
-      defaultRenderer = ReactDOM.createRoot
-    } else {
-      defaultRenderer = ReactDOM.hydrate
-    }
-  }
-
   const renderer = apiRunner(
     `replaceHydrateFunction`,
     undefined,
-    defaultRenderer
+    // Client only pages have any empty body so we just do a normal
+    // render to avoid React complaining about hydration mis-matches.
+    focusEl && focusEl.children.length > 0 ? ReactDOM.hydrate : ReactDOM.render
   )[0]
 
   let dismissLoadingIndicator
@@ -176,60 +166,31 @@ apiRunnerAsync(`onClientEntry`).then(() => {
   ]).then(() => {
     navigationInit()
 
-    function onHydrated() {
-      apiRunner(`onInitialClientRender`)
-
-      // Render query on demand overlay
-      if (
-        process.env.GATSBY_QUERY_ON_DEMAND_LOADING_INDICATOR &&
-        process.env.GATSBY_QUERY_ON_DEMAND_LOADING_INDICATOR === `true`
-      ) {
-        const indicatorMountElement = document.createElement(`div`)
-        indicatorMountElement.setAttribute(
-          `id`,
-          `query-on-demand-indicator-element`
-        )
-        document.body.append(indicatorMountElement)
-
-        if (renderer === ReactDOM.createRoot) {
-          renderer(indicatorMountElement).render(
-            <LoadingIndicatorEventHandler />
-          )
-        } else {
-          ReactDOM.render(
-            <LoadingIndicatorEventHandler />,
-            indicatorMountElement
-          )
-        }
-      }
-    }
-
-    function App() {
-      const onClientEntryRanRef = React.useRef(false)
-
-      React.useEffect(() => {
-        if (!onClientEntryRanRef.current) {
-          onClientEntryRanRef.current = true
-
-          onHydrated()
-        }
-      }, [])
-
-      return <Root />
-    }
-
     domReady(() => {
       if (dismissLoadingIndicator) {
         dismissLoadingIndicator()
       }
 
-      if (renderer === ReactDOM.createRoot) {
-        renderer(rootElement, {
-          hydrate: true,
-        }).render(<App />)
-      } else {
-        renderer(<App />, rootElement)
-      }
+      renderer(<Root />, rootElement, () => {
+        apiRunner(`onInitialClientRender`)
+
+        // Render query on demand overlay
+        if (
+          process.env.GATSBY_QUERY_ON_DEMAND_LOADING_INDICATOR &&
+          process.env.GATSBY_QUERY_ON_DEMAND_LOADING_INDICATOR === `true`
+        ) {
+          const indicatorMountElement = document.createElement(`div`)
+          indicatorMountElement.setAttribute(
+            `id`,
+            `query-on-demand-indicator-element`
+          )
+          document.body.append(indicatorMountElement)
+          ReactDOM.render(
+            <LoadingIndicatorEventHandler />,
+            indicatorMountElement
+          )
+        }
+      })
     })
   })
 })

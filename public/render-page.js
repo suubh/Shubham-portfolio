@@ -1,17 +1,6 @@
 /******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "./.cache/redirects.json":
-/*!*******************************!*\
-  !*** ./.cache/redirects.json ***!
-  \*******************************/
-/***/ ((module) => {
-
-"use strict";
-module.exports = [];
-
-/***/ }),
-
 /***/ "./node_modules/@babel/runtime/helpers/assertThisInitialized.js":
 /*!**********************************************************************!*\
   !*** ./node_modules/@babel/runtime/helpers/assertThisInitialized.js ***!
@@ -97,6 +86,69 @@ module.exports.default = module.exports, module.exports.__esModule = true;
 
 /***/ }),
 
+/***/ "./node_modules/@babel/runtime/helpers/interopRequireWildcard.js":
+/*!***********************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/interopRequireWildcard.js ***!
+  \***********************************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+var _typeof = __webpack_require__(/*! @babel/runtime/helpers/typeof */ "./node_modules/@babel/runtime/helpers/typeof.js").default;
+
+function _getRequireWildcardCache(nodeInterop) {
+  if (typeof WeakMap !== "function") return null;
+  var cacheBabelInterop = new WeakMap();
+  var cacheNodeInterop = new WeakMap();
+  return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) {
+    return nodeInterop ? cacheNodeInterop : cacheBabelInterop;
+  })(nodeInterop);
+}
+
+function _interopRequireWildcard(obj, nodeInterop) {
+  if (!nodeInterop && obj && obj.__esModule) {
+    return obj;
+  }
+
+  if (obj === null || _typeof(obj) !== "object" && typeof obj !== "function") {
+    return {
+      "default": obj
+    };
+  }
+
+  var cache = _getRequireWildcardCache(nodeInterop);
+
+  if (cache && cache.has(obj)) {
+    return cache.get(obj);
+  }
+
+  var newObj = {};
+  var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor;
+
+  for (var key in obj) {
+    if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) {
+      var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null;
+
+      if (desc && (desc.get || desc.set)) {
+        Object.defineProperty(newObj, key, desc);
+      } else {
+        newObj[key] = obj[key];
+      }
+    }
+  }
+
+  newObj["default"] = obj;
+
+  if (cache) {
+    cache.set(obj, newObj);
+  }
+
+  return newObj;
+}
+
+module.exports = _interopRequireWildcard;
+module.exports.default = module.exports, module.exports.__esModule = true;
+
+/***/ }),
+
 /***/ "./node_modules/@babel/runtime/helpers/objectWithoutPropertiesLoose.js":
 /*!*****************************************************************************!*\
   !*** ./node_modules/@babel/runtime/helpers/objectWithoutPropertiesLoose.js ***!
@@ -140,6 +192,37 @@ function _setPrototypeOf(o, p) {
 }
 
 module.exports = _setPrototypeOf;
+module.exports.default = module.exports, module.exports.__esModule = true;
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/typeof.js":
+/*!*******************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/typeof.js ***!
+  \*******************************************************/
+/***/ ((module) => {
+
+function _typeof(obj) {
+  "@babel/helpers - typeof";
+
+  if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") {
+    module.exports = _typeof = function _typeof(obj) {
+      return typeof obj;
+    };
+
+    module.exports.default = module.exports, module.exports.__esModule = true;
+  } else {
+    module.exports = _typeof = function _typeof(obj) {
+      return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj;
+    };
+
+    module.exports.default = module.exports, module.exports.__esModule = true;
+  }
+
+  return _typeof(obj);
+}
+
+module.exports = _typeof;
 module.exports.default = module.exports, module.exports.__esModule = true;
 
 /***/ }),
@@ -3487,7 +3570,6 @@ var _utils = __webpack_require__(/*! @gatsbyjs/reach-router/lib/utils */ "./node
 var _parsePath = __webpack_require__(/*! ./parse-path */ "./node_modules/gatsby-link/parse-path.js");
 
 exports.parsePath = _parsePath.parsePath;
-var _excluded = ["to", "getProps", "onClick", "onMouseEnter", "activeClassName", "activeStyle", "innerRef", "partiallyActive", "state", "replace", "_location"];
 
 var isAbsolutePath = function isAbsolutePath(path) {
   return path === null || path === void 0 ? void 0 : path.startsWith("/");
@@ -3700,7 +3782,7 @@ var GatsbyLink = /*#__PURE__*/function (_React$Component) {
         state = _this$props.state,
         replace = _this$props.replace,
         _location = _this$props._location,
-        rest = (0, _objectWithoutPropertiesLoose2.default)(_this$props, _excluded);
+        rest = (0, _objectWithoutPropertiesLoose2.default)(_this$props, ["to", "getProps", "onClick", "onMouseEnter", "activeClassName", "activeStyle", "innerRef", "partiallyActive", "state", "replace", "_location"]);
 
     if ( true && !isLocalLink(to)) {
       console.warn("External link " + to + " was detected in a Link component. Use the Link component only for internal links. See: https://gatsby.dev/internal-links");
@@ -3854,6 +3936,8 @@ exports.useScrollRestoration = _useScrollRestoration.useScrollRestoration;
 "use strict";
 
 
+var _interopRequireWildcard = __webpack_require__(/*! @babel/runtime/helpers/interopRequireWildcard */ "./node_modules/@babel/runtime/helpers/interopRequireWildcard.js");
+
 var _interopRequireDefault = __webpack_require__(/*! @babel/runtime/helpers/interopRequireDefault */ "./node_modules/@babel/runtime/helpers/interopRequireDefault.js");
 
 exports.__esModule = true;
@@ -3868,10 +3952,6 @@ var React = _interopRequireWildcard(__webpack_require__(/*! react */ "react"));
 var _propTypes = _interopRequireDefault(__webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js"));
 
 var _sessionStorage = __webpack_require__(/*! ./session-storage */ "./node_modules/gatsby-react-router-scroll/session-storage.js");
-
-function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
-
-function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
 var ScrollContext = /*#__PURE__*/React.createContext(new _sessionStorage.SessionStorage());
 exports.ScrollContext = ScrollContext;
@@ -4164,8 +4244,8 @@ var plugins = [{
   plugin: __webpack_require__(/*! ./node_modules/gatsby-plugin-manifest/gatsby-ssr */ "./node_modules/gatsby-plugin-manifest/gatsby-ssr.js"),
   options: {
     "plugins": [],
-    "name": "BrittanyChiang",
-    "short_name": "BrittanyChiang",
+    "name": "Shubham Singh",
+    "short_name": "Shub",
     "start_url": "/",
     "background_color": "#020c1b",
     "theme_color": "#0a192f",
@@ -4176,7 +4256,7 @@ var plugins = [{
     "cache_busting_mode": "query",
     "crossOrigin": "anonymous",
     "include_favicon": true,
-    "cacheDigest": null
+    "cacheDigest": "7e361919c5f6d5d12491ce184c00df0a"
   }
 }, {
   name: 'gatsby-plugin-offline',
@@ -4551,8 +4631,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _gatsbyjs_reach_router_lib_utils__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @gatsbyjs/reach-router/lib/utils */ "./node_modules/@gatsbyjs/reach-router/lib/utils.js");
 /* harmony import */ var _strip_prefix__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./strip-prefix */ "./.cache/strip-prefix.js");
 /* harmony import */ var _normalize_page_path__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./normalize-page-path */ "./.cache/normalize-page-path.js");
-/* harmony import */ var _redirect_utils_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./redirect-utils.js */ "./.cache/redirect-utils.js");
-
 
 
 
@@ -4658,12 +4736,6 @@ const findPath = rawPathname => {
 
   if (pathCache.has(trimmedPathname)) {
     return pathCache.get(trimmedPathname);
-  }
-
-  const redirect = (0,_redirect_utils_js__WEBPACK_IMPORTED_MODULE_3__.maybeGetBrowserRedirect)(rawPathname);
-
-  if (redirect) {
-    return findPath(redirect.toPath);
   }
 
   let foundPath = findMatchPath(trimmedPathname);
@@ -5529,41 +5601,6 @@ exports.polyfill = Component => Component;
 
 /***/ }),
 
-/***/ "./.cache/redirect-utils.js":
-/*!**********************************!*\
-  !*** ./.cache/redirect-utils.js ***!
-  \**********************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "maybeGetBrowserRedirect": () => (/* binding */ maybeGetBrowserRedirect)
-/* harmony export */ });
-/* harmony import */ var _redirects_json__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./redirects.json */ "./.cache/redirects.json");
- // Convert to a map for faster lookup in maybeRedirect()
-
-const redirectMap = new Map();
-const redirectIgnoreCaseMap = new Map();
-_redirects_json__WEBPACK_IMPORTED_MODULE_0__.forEach(redirect => {
-  if (redirect.ignoreCase) {
-    redirectIgnoreCaseMap.set(redirect.fromPath, redirect);
-  } else {
-    redirectMap.set(redirect.fromPath, redirect);
-  }
-});
-function maybeGetBrowserRedirect(pathname) {
-  let redirect = redirectMap.get(pathname);
-
-  if (!redirect) {
-    redirect = redirectIgnoreCaseMap.get(pathname.toLowerCase());
-  }
-
-  return redirect;
-}
-
-/***/ }),
-
 /***/ "./.cache/strip-prefix.js":
 /*!********************************!*\
   !*** ./.cache/strip-prefix.js ***!
@@ -5714,7 +5751,7 @@ function onRenderBody(_ref) {
   var setHeadComponents = _ref.setHeadComponents;
   setHeadComponents([React.createElement("style", {
     key: "gatsby-image-style",
-    dangerouslySetInnerHTML: generateHtml(".gatsby-image-wrapper{position:relative;overflow:hidden}.gatsby-image-wrapper img{bottom:0;height:100%;left:0;margin:0;max-width:none;padding:0;position:absolute;right:0;top:0;width:100%;object-fit:cover}.gatsby-image-wrapper [data-main-image]{opacity:0;transform:translateZ(0);transition:opacity .25s linear;will-change:opacity}.gatsby-image-wrapper-constrained{display:inline-block;vertical-align:top}")
+    dangerouslySetInnerHTML: generateHtml(".gatsby-image-wrapper{position:relative;overflow:hidden}.gatsby-image-wrapper img{bottom:0;height:100%;left:0;margin:0;max-width:none;padding:0;position:absolute;right:0;top:0;width:100%;object-fit:cover}.gatsby-image-wrapper [data-main-image]{opacity:0;transform:translateZ(0);transition:opacity .25s linear;will-change:opacity}.gatsby-image-wrapper-constrained{display:inline-block}")
   }), React.createElement("noscript", {
     key: "gatsby-image-style-noscript",
     dangerouslySetInnerHTML: generateHtml("<style>" + ".gatsby-image-wrapper noscript [data-main-image]{opacity:1!important}.gatsby-image-wrapper [data-placeholder-image]{opacity:0!important}" + "</style>")
@@ -5813,63 +5850,15 @@ exports.addDigestToPath = function (path, digest, method) {
 
 var _interopRequireDefault = __webpack_require__(/*! @babel/runtime/helpers/interopRequireDefault */ "./node_modules/@babel/runtime/helpers/interopRequireDefault.js");
 
+var _interopRequireWildcard = __webpack_require__(/*! @babel/runtime/helpers/interopRequireWildcard */ "./node_modules/@babel/runtime/helpers/interopRequireWildcard.js");
+
 var React = _interopRequireWildcard(__webpack_require__(/*! react */ "react"));
 
 var _gatsby = __webpack_require__(/*! gatsby */ "./.cache/gatsby-browser-entry.js");
 
 var _common = __webpack_require__(/*! ./common.js */ "./node_modules/gatsby-plugin-manifest/common.js");
 
-var _getManifestPathname = _interopRequireDefault(__webpack_require__(/*! ./get-manifest-pathname */ "./node_modules/gatsby-plugin-manifest/get-manifest-pathname.js"));
-
-function _getRequireWildcardCache(nodeInterop) {
-  if (typeof WeakMap !== "function") return null;
-  var cacheBabelInterop = new WeakMap();
-  var cacheNodeInterop = new WeakMap();
-  return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) {
-    return nodeInterop ? cacheNodeInterop : cacheBabelInterop;
-  })(nodeInterop);
-}
-
-function _interopRequireWildcard(obj, nodeInterop) {
-  if (!nodeInterop && obj && obj.__esModule) {
-    return obj;
-  }
-
-  if (obj === null || typeof obj !== "object" && typeof obj !== "function") {
-    return {
-      default: obj
-    };
-  }
-
-  var cache = _getRequireWildcardCache(nodeInterop);
-
-  if (cache && cache.has(obj)) {
-    return cache.get(obj);
-  }
-
-  var newObj = {};
-  var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor;
-
-  for (var key in obj) {
-    if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) {
-      var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null;
-
-      if (desc && (desc.get || desc.set)) {
-        Object.defineProperty(newObj, key, desc);
-      } else {
-        newObj[key] = obj[key];
-      }
-    }
-  }
-
-  newObj.default = obj;
-
-  if (cache) {
-    cache.set(obj, newObj);
-  }
-
-  return newObj;
-} // TODO: remove for v3
+var _getManifestPathname = _interopRequireDefault(__webpack_require__(/*! ./get-manifest-pathname */ "./node_modules/gatsby-plugin-manifest/get-manifest-pathname.js")); // TODO: remove for v3
 
 
 var withPrefix = _gatsby.withAssetPrefix || _gatsby.withPrefix;
@@ -6089,61 +6078,13 @@ exports.onRenderBody = onRenderBody;
 "use strict";
 
 
+var _interopRequireWildcard = __webpack_require__(/*! @babel/runtime/helpers/interopRequireWildcard */ "./node_modules/@babel/runtime/helpers/interopRequireWildcard.js");
+
 var React = _interopRequireWildcard(__webpack_require__(/*! react */ "react"));
 
 var _gatsby = __webpack_require__(/*! gatsby */ "./.cache/gatsby-browser-entry.js");
 
-var _path = __webpack_require__(/*! path */ "path");
-
-function _getRequireWildcardCache(nodeInterop) {
-  if (typeof WeakMap !== "function") return null;
-  var cacheBabelInterop = new WeakMap();
-  var cacheNodeInterop = new WeakMap();
-  return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) {
-    return nodeInterop ? cacheNodeInterop : cacheBabelInterop;
-  })(nodeInterop);
-}
-
-function _interopRequireWildcard(obj, nodeInterop) {
-  if (!nodeInterop && obj && obj.__esModule) {
-    return obj;
-  }
-
-  if (obj === null || typeof obj !== "object" && typeof obj !== "function") {
-    return {
-      default: obj
-    };
-  }
-
-  var cache = _getRequireWildcardCache(nodeInterop);
-
-  if (cache && cache.has(obj)) {
-    return cache.get(obj);
-  }
-
-  var newObj = {};
-  var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor;
-
-  for (var key in obj) {
-    if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) {
-      var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null;
-
-      if (desc && (desc.get || desc.set)) {
-        Object.defineProperty(newObj, key, desc);
-      } else {
-        newObj[key] = obj[key];
-      }
-    }
-  }
-
-  newObj.default = obj;
-
-  if (cache) {
-    cache.set(obj, newObj);
-  }
-
-  return newObj;
-} // TODO: Remove for v3 - Fix janky path/asset prefixing
+var _internals = __webpack_require__(/*! ./internals */ "./node_modules/gatsby-plugin-sitemap/internals.js"); // TODO: Remove for v3 - Fix janky path/asset prefixing
 
 
 var withPrefix = _gatsby.withAssetPrefix || _gatsby.withPrefix;
@@ -6161,9 +6102,238 @@ exports.onRenderBody = function (_ref, pluginOptions) {
     key: "gatsby-plugin-sitemap",
     rel: "sitemap",
     type: "application/xml",
-    href: withPrefix(_path.posix.join(output, "/sitemap-index.xml"))
+    href: withPrefix((0, _internals.withoutTrailingSlash)(output) + "/sitemap-index.xml")
   })]);
 };
+
+/***/ }),
+
+/***/ "./node_modules/gatsby-plugin-sitemap/internals.js":
+/*!*********************************************************!*\
+  !*** ./node_modules/gatsby-plugin-sitemap/internals.js ***!
+  \*********************************************************/
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
+
+"use strict";
+
+
+var _interopRequireDefault = __webpack_require__(/*! @babel/runtime/helpers/interopRequireDefault */ "./node_modules/@babel/runtime/helpers/interopRequireDefault.js");
+
+exports.__esModule = true;
+exports.prefixPath = prefixPath;
+exports.resolveSiteUrl = resolveSiteUrl;
+exports.resolvePagePath = resolvePagePath;
+exports.resolvePages = resolvePages;
+exports.defaultFilterPages = defaultFilterPages;
+exports.serialize = serialize;
+exports.pageFilter = pageFilter;
+exports.withoutTrailingSlash = exports.REPORTER_PREFIX = void 0;
+
+var _minimatch = _interopRequireDefault(__webpack_require__(/*! minimatch */ "./node_modules/minimatch/minimatch.js"));
+
+var REPORTER_PREFIX = "[gatsby-plugin-sitemap]:";
+/**
+ *
+ * @param {string} path
+ * @returns {string}
+ */
+
+exports.REPORTER_PREFIX = REPORTER_PREFIX;
+
+var withoutTrailingSlash = function withoutTrailingSlash(path) {
+  return path === "/" ? path : path.replace(/\/$/, "");
+};
+/**
+ * @name prefixPath
+ *
+ * Properly handles prefixing relative path with site domain, Gatsby pathPrefix and AssetPrefix
+ *
+ * @param {string} url - string containing relative path
+ * @param {string} siteUrl - results of the resolveSiteUrl function
+ * @returns {string}
+ */
+// TODO: Update for v3 - Fix janky path/asset prefixing
+
+
+exports.withoutTrailingSlash = withoutTrailingSlash;
+
+function prefixPath(_ref) {
+  var url = _ref.url,
+      siteUrl = _ref.siteUrl,
+      _ref$pathPrefix = _ref.pathPrefix,
+      pathPrefix = _ref$pathPrefix === void 0 ? "" : _ref$pathPrefix;
+  return new URL(pathPrefix + url, siteUrl).toString();
+}
+/**
+ * @name resolveSiteUrl
+ *
+ * @param {object} data - results of the GraphQL query
+ * @returns {string} - site URL, this can come from thegraphql query or another scope
+ */
+
+
+function resolveSiteUrl(data) {
+  var _data$site, _data$site$siteMetada;
+
+  if (!(data !== null && data !== void 0 && (_data$site = data.site) !== null && _data$site !== void 0 && (_data$site$siteMetada = _data$site.siteMetadata) !== null && _data$site$siteMetada !== void 0 && _data$site$siteMetada.siteUrl)) {
+    throw Error("`siteUrl` does not exist on `siteMetadata` in the data returned from the query.\n      Add this to your custom query or provide a custom `resolveSiteUrl` function.\n      https://www.gatsbyjs.com/plugins/gatsby-plugin-sitemap/#api-reference\n      ");
+  }
+
+  return data.site.siteMetadata.siteUrl;
+}
+/**
+ * @name resolvePagePath
+ *
+ * if you don't want to place the URI in "path" then resolvePagePath
+ * are needed.
+ *
+ * @param {object} page - Array Item returned from resolvePages
+ * @returns {string} - uri of the page without domain or protocol
+ */
+
+
+function resolvePagePath(page) {
+  if (!(page !== null && page !== void 0 && page.path)) {
+    throw Error("`path` does not exist on your page object.\n      Make the page URI available at `path` or provide a custom `resolvePagePath` function.\n      https://www.gatsbyjs.com/plugins/gatsby-plugin-sitemap/#api-reference\n      ");
+  }
+
+  return page.path;
+}
+/**
+ * @name resolvePages
+ *
+ * This allows custom resolution of the array of pages.
+ * This also where user's could merge multiple sources into
+ * a single array if needed.
+ *
+ * @param {object} data - results of the GraphQL query
+ * @returns {Array} - Array of objects representing each page
+ */
+
+
+function resolvePages(data) {
+  var _data$allSitePage;
+
+  if (!(data !== null && data !== void 0 && (_data$allSitePage = data.allSitePage) !== null && _data$allSitePage !== void 0 && _data$allSitePage.nodes)) {
+    throw Error("Page array from `query` wasn't found at `data.allSitePage.nodes`.\n      Fix the custom query or provide a custom `resolvePages` function.\n      https://www.gatsbyjs.com/plugins/gatsby-plugin-sitemap/#api-reference\n      ");
+  }
+
+  return data.allSitePage.nodes;
+}
+/**
+ * @name defaultFilterPages
+ *
+ * This allows filtering any data in any way.
+ *
+ * This Function is executed via allPages.filter((page) => !excludes.some((excludedRoute) => thisFunc(page, ecludedRoute, tools)))
+ * allPages is the results of the resolvePages
+ *
+ * @param {object} page
+ * @param {string} excludedRoute - Array from plugin config `options.exclude`
+ * @param {object} tools - contains required tools for filtering
+ *
+ * @returns {boolean}
+ */
+
+
+function defaultFilterPages(page, excludedRoute, _ref2) {
+  var minimatch = _ref2.minimatch,
+      withoutTrailingSlash = _ref2.withoutTrailingSlash,
+      resolvePagePath = _ref2.resolvePagePath;
+
+  if (typeof excludedRoute !== "string") {
+    throw new Error("You've passed something other than string to the exclude array. This is supported, but you'll have to write a custom filter function.\n      Ignoring the input for now: " + JSON.stringify(excludedRoute, null, 2) + "\n      https://www.gatsbyjs.com/plugins/gatsby-plugin-sitemap/#api-reference\n      ");
+  } // Minimatch is always scary without an example
+  // TODO add example
+
+
+  return minimatch(withoutTrailingSlash(resolvePagePath(page)), withoutTrailingSlash(excludedRoute));
+}
+/**
+ * @name serialize
+ *
+ * This function is executed by allPages.map(page => thisFunc(page, siteUrl, tools))
+ * allpages is the result of the filter process
+ *
+ * @param {object[]} page - results of the resolvePages function
+ * @param {object} tools - contains tools for serializing
+ *
+ */
+
+
+function serialize(page, _ref3) {
+  var resolvePagePath = _ref3.resolvePagePath;
+  return {
+    url: "" + resolvePagePath(page),
+    changefreq: "daily",
+    priority: 0.7
+  };
+}
+
+var defaultExcludes = ["/dev-404-page", "/404", "/404.html", "/offline-plugin-app-shell-fallback"];
+
+function pageFilter(_ref4) {
+  var allPages = _ref4.allPages,
+      filterPages = _ref4.filterPages,
+      excludes = _ref4.excludes;
+  var messages = [];
+
+  if (!Array.isArray(allPages) || typeof filterPages !== "function" || !Array.isArray(excludes)) {
+    throw new Error("Invalid options passed to page Filter function");
+  } // TODO we should optimize these loops
+
+
+  var filteredPages = allPages.filter(function (page) {
+    var defaultFilterMatches = defaultExcludes.some(function (exclude, i, arr) {
+      try {
+        var doesMatch = defaultFilterPages(page, exclude, {
+          minimatch: _minimatch.default,
+          withoutTrailingSlash: withoutTrailingSlash,
+          resolvePagePath: resolvePagePath
+        }); // default excludes can only be found once, so remove them from the arr once excluded
+
+        if (doesMatch) {
+          arr.splice(i, 1);
+        }
+
+        return doesMatch;
+      } catch (_unused) {
+        throw new Error(REPORTER_PREFIX + " Error in default page filter");
+      }
+    });
+
+    if (defaultFilterMatches) {
+      messages.push(REPORTER_PREFIX + " Default filter excluded page " + resolvePagePath(page));
+    } // If page is marked to be excluded via defaults there's no need to check page for custom excludes
+
+
+    if (defaultFilterMatches) {
+      return !defaultFilterMatches;
+    }
+
+    var customFilterMatches = excludes.some(function (exclude) {
+      try {
+        return filterPages(page, exclude, {
+          minimatch: _minimatch.default,
+          withoutTrailingSlash: withoutTrailingSlash,
+          resolvePagePath: resolvePagePath
+        });
+      } catch (_unused2) {
+        throw new Error(REPORTER_PREFIX + " Error in custom page filter.\n            If you've customized your excludes you may need to provide a custom \"filterPages\" function in your config.\n            https://www.gatsbyjs.com/plugins/gatsby-plugin-sitemap/#api-reference\n            ");
+      }
+    });
+
+    if (customFilterMatches) {
+      messages.push(REPORTER_PREFIX + " Custom filtering excluded page " + resolvePagePath(page));
+    }
+
+    return !(defaultFilterMatches || customFilterMatches);
+  });
+  return {
+    filteredPages: filteredPages,
+    messages: messages
+  };
+}
 
 /***/ }),
 

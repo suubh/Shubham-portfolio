@@ -5,13 +5,13 @@ var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefau
 exports.__esModule = true;
 exports.prettifyStack = prettifyStack;
 exports.openInEditor = openInEditor;
-exports.reloadPage = reloadPage;
-exports.skipSSR = skipSSR;
 exports.getCodeFrameInformation = getCodeFrameInformation;
 exports.getLineNumber = getLineNumber;
 exports.formatFilename = formatFilename;
 
 var _anser = _interopRequireDefault(require("anser"));
+
+const enterRegex = /^\s$/;
 
 function prettifyStack(errorInformation) {
   let txt;
@@ -22,27 +22,24 @@ function prettifyStack(errorInformation) {
     txt = errorInformation;
   }
 
-  return _anser.default.ansiToJson(txt, {
+  const generated = _anser.default.ansiToJson(txt, {
     remove_empty: true,
     use_classes: true,
     json: true
-  });
+  }); // Sometimes the first line/entry is an "Enter", so we need to filter this out
+
+
+  const [firstLine, ...rest] = generated;
+
+  if (enterRegex.test(firstLine.content)) {
+    return rest;
+  }
+
+  return generated;
 }
 
 function openInEditor(file, lineNumber = 1) {
   fetch(`/__open-stack-frame-in-editor?fileName=` + window.encodeURIComponent(file) + `&lineNumber=` + window.encodeURIComponent(lineNumber));
-}
-
-function reloadPage() {
-  window.location.reload();
-}
-
-function skipSSR() {
-  if (`URLSearchParams` in window) {
-    const searchParams = new URLSearchParams(window.location.search);
-    searchParams.set(`skip-ssr`, `true`);
-    window.location.search = searchParams.toString();
-  }
 }
 
 function getCodeFrameInformation(stackTrace) {

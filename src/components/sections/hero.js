@@ -63,10 +63,10 @@ const Hero = () => {
   const three = <h3 className="big-heading">I write Code.</h3>;
   const four = (
     <p>
-      I'm an India-based CS Undergrad Student who is passionate about Machine Learning and
+      I'm a CS Undergrad Student who is passionate about Machine Learning and
        Web Development . Currently, I'm an engineering student at{' '}
       <a href="https://nitap.ac.in/" target="_blank" rel="noreferrer">
-        NIT Arunachal Pradesh,India.
+        NIT Arunachal Pradesh, India.
       </a>{' '}
       Interested in Software Development Roles and loves Photography.
     </p>

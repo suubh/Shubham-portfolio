@@ -1,5 +1,7 @@
 "use strict";
 
+var _interopRequireWildcard = require("@babel/runtime/helpers/interopRequireWildcard");
+
 exports.__esModule = true;
 exports.default = void 0;
 
@@ -17,12 +19,6 @@ var _runtimeErrors = require("./components/runtime-errors");
 
 var _graphqlErrors = require("./components/graphql-errors");
 
-var _devSsrError = require("./components/dev-ssr-error");
-
-function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function (nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
-
-function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
-
 const reducer = (state, event) => {
   switch (event.action) {
     case `CLEAR_COMPILE_ERROR`:
@@ -39,24 +35,10 @@ const reducer = (state, event) => {
         };
       }
 
-    case `CLEAR_DEV_SSR_ERROR`:
-      {
-        return { ...state,
-          devSsrError: null
-        };
-      }
-
     case `SHOW_COMPILE_ERROR`:
       {
         return { ...state,
           buildError: event.payload
-        };
-      }
-
-    case `SHOW_DEV_SSR_ERROR`:
-      {
-        return { ...state,
-          devSsrError: event.payload
         };
       }
 
@@ -101,7 +83,6 @@ const reducer = (state, event) => {
 const initialState = {
   errors: [],
   buildError: null,
-  devSsrError: null,
   graphqlErrors: []
 };
 
@@ -138,8 +119,7 @@ function DevOverlay({
   const hasBuildError = state.buildError !== null;
   const hasRuntimeErrors = Boolean(state.errors.length);
   const hasGraphqlErrors = Boolean(state.graphqlErrors.length);
-  const hasDevSsrError = state.devSsrError !== null;
-  const hasErrors = hasBuildError || hasRuntimeErrors || hasGraphqlErrors || hasDevSsrError; // This component has a deliberate order (priority)
+  const hasErrors = hasBuildError || hasRuntimeErrors || hasGraphqlErrors; // This component has a deliberate order (priority)
 
   const ErrorComponent = () => {
     if (hasBuildError) {
@@ -159,12 +139,6 @@ function DevOverlay({
       return /*#__PURE__*/React.createElement(_graphqlErrors.GraphqlErrors, {
         errors: state.graphqlErrors,
         dismiss: dismiss
-      });
-    }
-
-    if (hasDevSsrError) {
-      return /*#__PURE__*/React.createElement(_devSsrError.DevSsrError, {
-        error: state.devSsrError
       });
     }
 

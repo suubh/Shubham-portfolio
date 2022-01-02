@@ -4,7 +4,7 @@ title: 'Google DSC Lead'
 company: 'Google DSC'
 location: 'India'
 range: 'July 2021 - Ongoing'
-url: 'https://developers.google.com/community/dsc'
+url: 'https://gdsc.community.dev/national-institute-of-technology-nit-arunachal-pradesh-yupia/'
 ---
 
 - Started Google Developer Student Club in our University and got selected as a Lead.

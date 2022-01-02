@@ -2,9 +2,9 @@ import { css } from 'styled-components';
 
 const variables = css`
   :root {
-    --dark-navy: #020c1b;
-    --navy: #0a192f;
-    --light-navy: #112240;
+    --dark-navy: #000000;
+    --navy: #000000;
+    --light-navy: #111111;
     --lightest-navy: #233554;
     --navy-shadow: rgba(2, 12, 27, 0.7);
     --dark-slate: #495670;

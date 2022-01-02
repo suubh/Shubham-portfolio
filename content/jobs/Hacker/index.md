@@ -3,7 +3,7 @@ date: '2021-08-16'
 title: 'Intern'
 company: 'HackerEarth'
 location: 'India'
-range: 'Aug 2021 - Ongoing'
+range: 'Aug 2021 - Nov 2021'
 url: 'https://www.hackerearth.com/'
 ---
 

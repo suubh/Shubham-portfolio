@@ -126,7 +126,7 @@ const About = () => {
     sr.reveal(revealContainer.current, srConfig());
   }, []);
 
-  const skills = ['Machine Learning', 'Python', 'C++', 'C', 'HTML,CSS,JavaScript', 'SQL'];
+  const skills = ['Machine Learning', 'Python', 'C++', 'C', 'HTML,CSS,JavaScript', 'SQL', 'Data Science', 'GCP'];
 
   return (
     <StyledAboutSection id="about" ref={revealContainer}>
@@ -136,7 +136,7 @@ const About = () => {
         <StyledText>
           <div>
             <p>
-              Hello! My name is Shubham Singh and I am from Arunachal Pradesh ,India.
+              Hello! My name is Shubham Singh and I am from Arunachal Pradesh, India.
             </p>
 
             <p>

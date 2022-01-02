@@ -1,5 +1,7 @@
 "use strict";
 
+var _interopRequireWildcard = require("@babel/runtime/helpers/interopRequireWildcard");
+
 var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
 
 exports.__esModule = true;
@@ -18,10 +20,6 @@ var React = _interopRequireWildcard(require("react"));
 var _lockBody = require("../helpers/lock-body");
 
 var _focusTrap = _interopRequireDefault(require("../helpers/focus-trap"));
-
-function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function (nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
-
-function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
 function Backdrop() {
   return /*#__PURE__*/React.createElement("div", {
@@ -91,7 +89,7 @@ function CloseButton({
   dismiss
 }) {
   return /*#__PURE__*/React.createElement("button", {
-    "data-gatsby-overlay": "close-button",
+    "data-gatsby-overlay": "header__close-button",
     onClick: dismiss
   }, /*#__PURE__*/React.createElement(VisuallyHidden, null, "Close"), /*#__PURE__*/React.createElement("svg", {
     "aria-hidden": true,
@@ -127,7 +125,7 @@ function HeaderOpenClose({
     "data-gatsby-overlay": "header__open-close"
   }, open && /*#__PURE__*/React.createElement("button", {
     onClick: open,
-    "data-gatsby-overlay": "primary-button"
+    "data-gatsby-overlay": "header__open-in-editor"
   }, "Open in editor"), dismiss && /*#__PURE__*/React.createElement(CloseButton, {
     dismiss: dismiss
   })));
