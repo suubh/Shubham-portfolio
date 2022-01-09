@@ -26,7 +26,6 @@
 
 ![demo](https://user-images.githubusercontent.com/47265493/122730181-919fdd80-d297-11eb-8e13-ada3a45355ed.png)
 
-Yes, you can fork this repo. Please give  proper credit by linking back to [brittanychiang.com](https://brittanychiang.com). Thanks!
 
 ## 🛠 Installation & Set Up
 
@@ -68,7 +67,7 @@ Yes, you can fork this repo. Please give  proper credit by linking back to [brit
    npm run serve
    ```
 
-## 🎨 Color Reference
+<!-- ## 🎨 Color Reference
 
 | Color          | Hex                                                                |
 | -------------- | ------------------------------------------------------------------ |
@@ -79,4 +78,9 @@ Yes, you can fork this repo. Please give  proper credit by linking back to [brit
 | Light Slate    | ![#a8b2d1](https://via.placeholder.com/10/a8b2d1?text=+) `#a8b2d1` |
 | Lightest Slate | ![#ccd6f6](https://via.placeholder.com/10/ccd6f6?text=+) `#ccd6f6` |
 | White          | ![#e6f1ff](https://via.placeholder.com/10/e6f1ff?text=+) `#e6f1ff` |
-| Green          | ![#64ffda](https://via.placeholder.com/10/64ffda?text=+) `#64ffda` |
+| Green          | ![#64ffda](https://via.placeholder.com/10/64ffda?text=+) `#64ffda` | -->
+
+
+<sub>
+  Yes, you can fork this repo. Please give  proper credit by linking back to [brittanychiang.com](https://brittanychiang.com). Thanks!
+</sub>
