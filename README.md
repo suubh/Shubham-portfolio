@@ -1,9 +1,9 @@
 <!-- ![Shubham Singh 7-14-2021 4-27-26 AM](https://user-images.githubusercontent.com/47265493/125561307-b51106b1-4d45-4506-9c9e-9e5b2446784e.png) -->
 [![Netlify Status](https://api.netlify.com/api/v1/badges/411568ee-cee9-4f22-b1f1-b6f119931d6c/deploy-status)](http://shubhamdev.netlify.app)
 
-<div align="center">
+<!-- <div align="center">
   <img alt="Logo" src="https://user-images.githubusercontent.com/47265493/125561307-b51106b1-4d45-4506-9c9e-9e5b2446784e.png" width="100" />
-</div>
+</div> -->
 <h1 align="center">
   Shubham Singh
 </h1>
@@ -24,8 +24,8 @@
 
 
 
-![demo](https://user-images.githubusercontent.com/47265493/122730181-919fdd80-d297-11eb-8e13-ada3a45355ed.png)
-
+<!-- ![demo](https://user-images.githubusercontent.com/47265493/122730181-919fdd80-d297-11eb-8e13-ada3a45355ed.png)
+ -->
 
 ## 🛠 Installation & Set Up
 
