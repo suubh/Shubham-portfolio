@@ -3,7 +3,7 @@ date: '2022-02-14'
 title: 'SDE Intern'
 company: 'Indiamart'
 location: 'India'
-range: 'Feb 2022 - Ongoing'
+range: 'Feb 2022 - Jul 2022'
 url: 'https://www.indiamart.com/'
 ---
 
